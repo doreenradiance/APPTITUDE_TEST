@@ -1,0 +1,38 @@
+.heading{
+  text-align: center;
+  border: 1.5px solid black;
+  font-size:5px;
+}
+
+.h4{
+  text-align: center;
+  margin-top: 40px;
+  text-decoration-line: underline;
+}
+.text{
+font-size: 15px;
+}
+
+.reason{
+  height: 80px;
+}
+ 
+.button{
+  margin: auto;
+  margin-top: 20px;
+}
+/* #buttons{
+  align-self: center;
+} */
+.table{
+  margin-top: 40px;
+}
+.hrReason{
+  height: 80px ;
+}
+#approveButton{
+  text-align:right
+}
+.form{
+  margin-top: 40px;
+}
