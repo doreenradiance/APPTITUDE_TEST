@@ -6,18 +6,13 @@ class ApprovalPage extends Component {
     render() {
         return (
             <div>
-                <div>
-                    {/* <h4>Employee Name{name}</h4>
-                    <h4>Employee ID{id}</h4>
-                    <h4>Duration{time}</h4>
-                    <h4>Type{type}</h4>
-                    <h4>Reason{reason}</h4>
-                    <h4>Status{status}</h4>
-                    <h4>Action</h4> */}
-                </div>
+                <h4>Name:</h4>
+                    <h5> Dorcas Brown</h5>
+                    <h4>Type of leave:</h4>
+                    <h5>Sick Leave</h5>
                 <div>
                    
-                    <Form>
+                    <Form className="form">
                         <Form.Group >
                             <Form.Label>Reason for approving request </Form.Label>
                             <Form.Control className="hr's reason" type="text" name="id"

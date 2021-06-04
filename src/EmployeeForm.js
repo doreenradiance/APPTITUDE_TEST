@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { approveRequester, declineRequester } from "./store/employersActions";
+import { addRequester, declineRequester } from "./store/employersActions";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Container, Row, Col } from "react-bootstrap";
+// import { useHistory } from "react-router";
 
 
 class EmployeeForm extends Component {
@@ -16,32 +17,37 @@ class EmployeeForm extends Component {
       time: "",
       reason: "",
       type: "",
-      // status:""
-
+      status: "pending"
     };
+    // this.router = useHistory()
+
   }
 
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
-    console.log(this.state.name);
+    console.log(this.state.status);
   }
+
 
   handleSubmit = e => {
     e.preventDefault();
+    console.log("working")
     const newRequester = {
       name: this.state.name,
       id: this.state.id,
       time: this.state.time,
       reason: this.state.reason,
       type: this.state.type,
-      // status:this.state.status
+      status: this.state.status
     };
 
-    console.log(this.props) 
-    this.props.approveRequester(newRequester);
-    window.location.href =window.location.origin +"/"
+    // console.log(this.props) 
+    this.props.addRequester(newRequester);
+    // window.location.href =window.location.origin +"/"
+    this.props.history.push("/")
+
 
 
     this.setState = ({
@@ -50,12 +56,12 @@ class EmployeeForm extends Component {
       time: "",
       reason: "",
       type: "",
-      // status:"",
+      status: "pending",
     });
   };
 
   addNewRequester = newRequester => {
-    this.props.approveRequester(newRequester)
+    this.props.addRequester(newRequester)
   };
 
   declineRequester = requester_id => {
@@ -73,7 +79,7 @@ class EmployeeForm extends Component {
         <div className="h4">
           <h4>Fill in this form to request for a leave</h4>
         </div>
-        
+
         <Container>
           <Row>
             <Col md={{ span: 3 }} />
@@ -100,7 +106,8 @@ class EmployeeForm extends Component {
                 <div className="types">
                   <Form.Group >
                     <Form.Label>Type of leave(please select):</Form.Label>
-                    <select className="form-control" id="exampleFormControlSelect1">
+                    <select className="form-control" id="exampleFormControlSelect1" name="type" onChange={this.handleChange}>
+                      <option>Select</option>
                       <option>Sick Leave</option>
                       <option>Maternity Leave</option>
                       <option>Bereavement Leave</option>
@@ -109,6 +116,17 @@ class EmployeeForm extends Component {
                     </select>
                   </Form.Group>
                 </div>
+                {/* <div className="types">
+                  <Form.Group >
+                    <Form.Label>Status</Form.Label>
+                    <select className="form-control" id="exampleFormControlSelect2" name="status" onChange={this.handleChange}>
+                      <option>Select</option>
+                      <option>Pending</option>
+                      <option>Approve</option>
+                      <option>Decline</option>
+                    </select>
+                  </Form.Group>
+                </div> */}
 
                 <Form.Group >
                   <Form.Label>Reason for requesting leave</Form.Label>
@@ -136,10 +154,10 @@ const mapStateToProps = (state) => ({
 })
 
 const madDispatchToProps = {
-  approveRequester: approveRequester,
+  addRequester: addRequester,
   declineRequester: declineRequester
 }
 //  let event = new Event('click');
 //  elem.dispatchEvent(event);
 
-export default connect( mapStateToProps,madDispatchToProps)(EmployeeForm);
+export default connect(mapStateToProps, madDispatchToProps)(EmployeeForm);

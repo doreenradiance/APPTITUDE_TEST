@@ -1,7 +1,7 @@
-export const approveRequester = (requester) => {
+export const addRequester = (requester) => {
     return (dispatch) => {
         dispatch({
-            type: "APPROVE_REQUESTER",
+            type: "ADD_REQUESTER",
             payload: requester
         }
         )
@@ -14,5 +14,15 @@ export const declineRequester = (requester_id) => {
         type: "DECLINE_REQUESTER",
         payload: requester_id
         })
+    }
+}
+
+export const approveRequester = (requester_id) => {
+    return (dispatch) => {
+        dispatch({
+            type: "APPROVE_REQUESTER",
+            payload: requester_id
+        }
+        )
     }
 }

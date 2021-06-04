@@ -1,22 +1,27 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
-import Button from "react-bootstrap/Button";
+import { connect } from "react-redux";
+import { useHistory } from "react-router";
+import FormItem from "./components/FormItem";
 
-const Formlist = ({ name, id, time, reason, type,status, 
+const Formlist = ({ name, id, time, reason, type, status, requesters
   // declineRequester
 }) => {
- 
-  // handleClick = () => {
-  //   declineRequester(id)
-  // }
 
+  const router = useHistory()
+    // handleClick = () => {
+    //   declineRequester(id)
+    // }
+
+    console.log("state", requesters)
   return (
     <div>
+      
       <div className="heading">
         <h1 className="text">LIST OF LEAVE REQUESTS</h1>
       </div>
-
+      <Button className="button" onClick={() => router.push("/EmployeeForm")}>Add requeters</Button>
       <Container>
         <div className="table">
           <Table striped bordered hover>
@@ -32,8 +37,13 @@ const Formlist = ({ name, id, time, reason, type,status,
               </tr>
             </thead>
 
+
             <tbody>
-              <tr>
+              {requesters.map((request, i) => {
+                return <FormItem data={request} key={i} id={i} />
+
+              })}
+              {/* <tr>
                 <td>Dorcas Brown</td>
                 <td>2055228</td>
                 <td>02/09/2020</td>
@@ -43,8 +53,8 @@ const Formlist = ({ name, id, time, reason, type,status,
                 <td id="buttons"><Button variant="success">Approve</Button>{" "}
                 <Button variant="danger" >Decline</Button>
                 </td>
-              </tr>
-              <tr>
+              </tr> */}
+              {/* <tr>
                 <td>Emmanuel Ayi</td>
                 <td>1122112</td>
                 <td>02/09/2020</td>
@@ -54,8 +64,8 @@ const Formlist = ({ name, id, time, reason, type,status,
                 <td id="buttons"><Button variant="success">Approve</Button>{" "}
                 <Button variant="danger" >Decline</Button>
                 </td>
-              </tr>
-              <tr>
+              </tr> */}
+              {/* <tr>
                 <td>Aaron Lartey</td>
                 <td>654890</td>
                 <td>12/12/2013</td>
@@ -65,7 +75,7 @@ const Formlist = ({ name, id, time, reason, type,status,
                 <td id="buttons"><Button variant="success">Approve</Button>{" "}
                 <Button variant="danger" >Decline</Button>
                 </td>
-              </tr>
+              </tr> */}
             </tbody>
           </Table>
         </div>
@@ -76,5 +86,13 @@ const Formlist = ({ name, id, time, reason, type,status,
   )
 }
 
+const mapStateToProps = (state) => ({
+  requesters: state.requesters
+})
 
-export default Formlist;
+const madDispatchToProps = {
+  // approveRequester: approveRequester,
+  // declineRequester: declineRequester
+}
+
+export default connect(mapStateToProps, madDispatchToProps)(Formlist);
