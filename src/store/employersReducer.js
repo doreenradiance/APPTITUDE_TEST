@@ -46,7 +46,8 @@ const employersReducer = (state = initialState, action) => {
 
         case "DECLINE_REQUESTER":
             const filteredRequesters = state.requesters.map((requester,i) =>{
-                if(i === action.payload){
+                console.log("isworking")
+                if(i == action.payload){
                     return {...requester,status:"declined"}
                 } else return requester
             })
@@ -54,12 +55,12 @@ const employersReducer = (state = initialState, action) => {
 
             
         case "APPROVE_REQUESTER":
-            const filteredRequesters = state.requesters.map((requester,i) =>{
-                if(i === action.payload){
+            const updatedRequesters = state.requesters.map((requester,i) =>{
+                if(i == action.payload){
                     return {...requester,status:"approved"}
                 } else return requester
             })
-            return{...state, requesters: filteredRequesters}
+            return{...state, requesters: updatedRequesters}
 
         default:
             return state;

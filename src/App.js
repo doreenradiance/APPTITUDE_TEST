@@ -46,25 +46,9 @@ class App extends Component {
         // id={item.id}
         />
         <Route path="/EmployeeForm" exact component={EmployeeForm} />
-        <Route path="/ApprovalPage" exact component={ApprovalPage} />
-        <Route path="/DeclinePage" exact component={DeclinePage} />
-        {/* <div className="App">
-          <div className="row"> */}
-        {/* <EmployeeForm addRequester={this.addNewRequester} />
-               {this.state.requesters.map((item, index) => {
-              return (
-                <Formlist key={index}
-                  name={item.name}
-                  id={item.id}
-                  time={item.time}
-                  reason={item.reason}
-                  type={item.type} />
-              )
-
-            })} */}
-
-        {/* //   </div> */}
-        {/* // </div>  */}
+        <Route path="/ApprovalPage/:id" exact component={ApprovalPage} />
+        <Route path="/DeclinePage/:id" exact component={DeclinePage} />
+        
       </Router>
     )
   }

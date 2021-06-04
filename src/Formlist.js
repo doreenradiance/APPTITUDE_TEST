@@ -10,18 +10,19 @@ const Formlist = ({ name, id, time, reason, type, status, requesters
 }) => {
 
   const router = useHistory()
-    // handleClick = () => {
-    //   declineRequester(id)
-    // }
+  // handleClick = () => {
+  //   declineRequester(id)
+  // }
 
-    console.log("state", requesters)
+  console.log("state", requesters)
   return (
     <div>
-      
       <div className="heading">
         <h1 className="text">LIST OF LEAVE REQUESTS</h1>
       </div>
-      <Button className="button" onClick={() => router.push("/EmployeeForm")}>Add requeters</Button>
+      <div>
+        <Button onClick={() => router.push("/EmployeeForm")}>Add requesters</Button>
+      </div>
       <Container>
         <div className="table">
           <Table striped bordered hover>
@@ -43,39 +44,6 @@ const Formlist = ({ name, id, time, reason, type, status, requesters
                 return <FormItem data={request} key={i} id={i} />
 
               })}
-              {/* <tr>
-                <td>Dorcas Brown</td>
-                <td>2055228</td>
-                <td>02/09/2020</td>
-              <td>Maternity Leave</td>
-              <td>Reason</td>
-              <td>Pending</td>
-                <td id="buttons"><Button variant="success">Approve</Button>{" "}
-                <Button variant="danger" >Decline</Button>
-                </td>
-              </tr> */}
-              {/* <tr>
-                <td>Emmanuel Ayi</td>
-                <td>1122112</td>
-                <td>02/09/2020</td>
-                <td>Sick Leave</td>
-                <td>Reason</td>
-                <td>Pending</td>
-                <td id="buttons"><Button variant="success">Approve</Button>{" "}
-                <Button variant="danger" >Decline</Button>
-                </td>
-              </tr> */}
-              {/* <tr>
-                <td>Aaron Lartey</td>
-                <td>654890</td>
-                <td>12/12/2013</td>
-                <td>Bereavement Leave</td>
-                <td>Reason</td>
-                <td>Pending</td>
-                <td id="buttons"><Button variant="success">Approve</Button>{" "}
-                <Button variant="danger" >Decline</Button>
-                </td>
-              </tr> */}
             </tbody>
           </Table>
         </div>
