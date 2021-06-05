@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from "react-bootstrap/Button";
 import { useHistory } from 'react-router';
-// import {approveRequester,declineRequester} from "../store/employersActions"
 
 const FormItem = (prop) => {
     const {name,id,time,reason,type,status} = prop.data

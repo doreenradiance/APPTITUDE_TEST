@@ -40,7 +40,6 @@ const mapStateToProps = (state) => ({
 })
 
 const madDispatchToProps = {
-    // approveRequester: approveRequester,
     declineRequester: declineRequester
 
 }

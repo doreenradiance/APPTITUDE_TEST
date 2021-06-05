@@ -6,13 +6,9 @@ import { useHistory } from "react-router";
 import FormItem from "./components/FormItem";
 
 const Formlist = ({ name, id, time, reason, type, status, requesters
-  // declineRequester
 }) => {
 
   const router = useHistory()
-  // handleClick = () => {
-  //   declineRequester(id)
-  // }
 
   console.log("state", requesters)
   return (
@@ -22,9 +18,8 @@ const Formlist = ({ name, id, time, reason, type, status, requesters
       </div>
       <div>
       <Button variant="light" onClick={() => router.push("/EmployeeForm")} className="addButton">Add requesters</Button> 
-
-        {/* <Button onClick={() => router.push("/EmployeeForm")}>Add requesters</Button> */}
       </div>
+      
       <Container>
         <div className="table">
           <Table striped bordered hover>

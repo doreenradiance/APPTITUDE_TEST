@@ -44,7 +44,6 @@ const mapStateToProps = (state) => ({
 
 const madDispatchToProps = {
     approveRequester: approveRequester,
-    // declineRequester: declineRequester
 }
 export default connect(mapStateToProps, madDispatchToProps)(ApprovalPage);
 

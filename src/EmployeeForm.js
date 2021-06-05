@@ -4,7 +4,6 @@ import { addRequester, declineRequester } from "./store/employersActions";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Container, Row, Col } from "react-bootstrap";
-// import { useHistory } from "react-router";
 
 
 class EmployeeForm extends Component {
@@ -19,7 +18,6 @@ class EmployeeForm extends Component {
       type: "",
       status: "pending"
     };
-    // this.router = useHistory()
 
   }
 
@@ -43,12 +41,8 @@ class EmployeeForm extends Component {
       status: this.state.status
     };
 
-    // console.log(this.props) 
     this.props.addRequester(newRequester);
-    // window.location.href =window.location.origin +"/"
     this.props.history.push("/")
-
-
 
     this.setState = ({
       name: "",
@@ -116,17 +110,6 @@ class EmployeeForm extends Component {
                     </select>
                   </Form.Group>
                 </div>
-                {/* <div className="types">
-                  <Form.Group >
-                    <Form.Label>Status</Form.Label>
-                    <select className="form-control" id="exampleFormControlSelect2" name="status" onChange={this.handleChange}>
-                      <option>Select</option>
-                      <option>Pending</option>
-                      <option>Approve</option>
-                      <option>Decline</option>
-                    </select>
-                  </Form.Group>
-                </div> */}
 
                 <Form.Group >
                   <Form.Label>Reason for requesting leave</Form.Label>
@@ -157,7 +140,5 @@ const madDispatchToProps = {
   addRequester: addRequester,
   declineRequester: declineRequester
 }
-//  let event = new Event('click');
-//  elem.dispatchEvent(event);
 
 export default connect(mapStateToProps, madDispatchToProps)(EmployeeForm);

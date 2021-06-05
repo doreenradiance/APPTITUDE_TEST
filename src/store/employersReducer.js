@@ -1,9 +1,7 @@
-// import {v4 as uuid } from "uuid";
- 
+
 const initialState = {
     requesters: [
         {
-            // id:"1",
             name: "Dorcas Brown",
             id: "2055228",
             time: "02/09/2020",
@@ -12,7 +10,6 @@ const initialState = {
         },
 
         {
-            // id:"2",
             name: "Emmanuel Ayi",
             id: "1122112",
             time: "02/09/2020",
@@ -20,7 +17,6 @@ const initialState = {
             type: "Sick Leave",
         },
         {
-            // id:"3",
             name: "Aaron Lartey",
             id: "654890",
             time: "12/12/2013",
@@ -34,7 +30,6 @@ const employersReducer = (state = initialState, action) => {
     switch (action.type) {
         case "ADD_REQUESTER":
             const newRequester = {
-                // id:uuid(),
                 name: action.payload.name,
                 id: action.payload.id,
                 time: action.payload.time,
