@@ -12,11 +12,7 @@ class ApprovalPage extends Component {
         console.log(this.id)
         return (
             <Container>
-                <div>
-                    <h4>Name:</h4>
-                    <h5> Dorcas Brown</h5>
-                    <h4>Type of leave:</h4>
-                    <h5>Sick Leave</h5>
+                <div> 
                     <div>
 
                         <Form className="form">
