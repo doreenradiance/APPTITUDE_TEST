@@ -7,6 +7,7 @@ const initialState = {
             time: "02/09/2020",
             reason: "Reason",
             type: "Maternity Leave",
+            status:"pending"
         },
 
         {
@@ -15,6 +16,7 @@ const initialState = {
             time: "02/09/2020",
             reason: "Reason",
             type: "Sick Leave",
+            status:"pending"
         },
         {
             name: "Aaron Lartey",
@@ -22,6 +24,7 @@ const initialState = {
             time: "12/12/2013",
             reason: "Reason",
             type: "Bereavement Leave",
+            status:"pending"
         },
     ]
 }
