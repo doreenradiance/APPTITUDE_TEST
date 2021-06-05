@@ -21,7 +21,9 @@ const Formlist = ({ name, id, time, reason, type, status, requesters
         <h1 className="text">LIST OF LEAVE REQUESTS</h1>
       </div>
       <div>
-        <Button onClick={() => router.push("/EmployeeForm")}>Add requesters</Button>
+      <Button variant="light" onClick={() => router.push("/EmployeeForm")} className="addButton">Add requesters</Button> 
+
+        {/* <Button onClick={() => router.push("/EmployeeForm")}>Add requesters</Button> */}
       </div>
       <Container>
         <div className="table">

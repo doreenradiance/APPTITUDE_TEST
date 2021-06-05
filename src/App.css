@@ -36,3 +36,9 @@ font-size: 15px;
 .form{
   margin-top: 40px;
 }
+.addButton{
+  float:right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
